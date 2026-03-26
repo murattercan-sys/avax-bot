@@ -1,7 +1,8 @@
+import os
 import requests
 import time
 
-TOKEN = "8653641801:AAE5-32Gvzi8q6DhBZbfTXf-mxFeGe7INVQ”
+TOKEN = os.getenv("TOKEN")
 URL = f"https://api.telegram.org/bot{TOKEN}"
 
 last_update = None
@@ -23,12 +24,9 @@ while True:
 
             if text == "/start":
                 send_message(chat_id, "🚀 Murat bot aktif.")
-
             elif text.upper() == "STATUS":
                 send_message(chat_id, "Bot çalışıyor.")
-
             else:
                 send_message(chat_id, f"Gelen mesaj: {text}")
 
     time.sleep(2)
-4
